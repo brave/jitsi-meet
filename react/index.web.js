@@ -8,6 +8,7 @@ import { getJitsiMeetTransport } from '../modules/transport';
 import { App } from './features/app';
 import { getLogger } from './features/base/logging/functions';
 import { Platform } from './features/base/react';
+import { receiveIsBraveCheck, isBrave } from './features/base/environment';
 
 const logger = getLogger('index.web');
 const OS = Platform.OS;
@@ -15,11 +16,13 @@ const OS = Platform.OS;
 /**
  * Renders the app when the DOM tree has been loaded.
  */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const now = window.performance.now();
 
     APP.connectionTimes['document.ready'] = now;
     logger.log('(TIME) document ready:\t', now);
+
+    receiveIsBraveCheck(await isBrave());
 
     // Render the main/root Component.
     ReactDOM.render(<App />, document.getElementById('react'));

@@ -130,7 +130,7 @@ class Conference extends AbstractConference<Props, *> {
      * @inheritdoc
      */
     componentDidMount() {
-        document.title = `${this.props._roomName} | ${interfaceConfig.APP_NAME}`;
+        document.title = `${interfaceConfig.APP_NAME}`;
         this._start();
     }
 
