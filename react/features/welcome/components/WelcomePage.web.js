@@ -248,7 +248,7 @@ class WelcomePage extends AbstractWelcomePage {
      * @returns {ReactElement|null}
      */
     _onDownloadBrave() {
-        window.open('http://brave.com/LVT920', '_self');
+        window.open(BRAVE_DOWNLOAD, '_self');
     }
 
     /**
