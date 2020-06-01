@@ -774,6 +774,7 @@
         "getHelp": "Get help",
         "roomNameAllowedChars": "Meeting name should not contain any of these characters: ?, &, :, ', \", %, #.",
         "go": "Start video call",
+        "download": "Download Brave",
         "goSmall": "Start video call",
         "join": "CREATE / JOIN",
         "info": "Info",

@@ -193,7 +193,7 @@ class WelcomePage extends AbstractWelcomePage {
                         </p>
                     </div>
                     <div id = 'enter_room'>
-                        {isBraveBrowser() ? <div
+                        { isBraveBrowser() ? <div
                             className = 'welcome-page-button'
                             id = 'enter_room_button'
                             onClick = { this._onLaunchCall }>
@@ -202,12 +202,17 @@ class WelcomePage extends AbstractWelcomePage {
                                     ? t('welcomepage.goSmall')
                                     : t('welcomepage.go')
                             }
-                        </div> : null}
+                        </div> : <div
+                            className = 'welcome-page-button-download'
+                            id = 'download_button'
+                            onClick = { this._onDownloadBrave }>
+                            { t('welcomepage.download') }
+                        </div> }
                     </div>
-                    <div className = { `footer-text${isBraveBrowser() ? ' with-margin' : ' without-margin'}` }>
+                    { isBraveBrowser() ? <div className = { 'footer-text' }>
                         { t('welcomepage.footerText') }
                         <a href = { BRAVE_DOWNLOAD }>Brave Browser</a>
-                    </div>
+                    </div> : null }
                 </div>
                 { showAdditionalContent
                     ? <div
@@ -235,6 +240,15 @@ class WelcomePage extends AbstractWelcomePage {
             .replace(/=/g, '');
 
         window.open(`https://together.brave.com/${name}`, '_self');
+    }
+
+    /**
+     * Redirects to Brave download page
+     *
+     * @returns {ReactElement|null}
+     */
+    _onDownloadBrave() {
+        window.open('http://brave.com/LVT920', '_self');
     }
 
     /**

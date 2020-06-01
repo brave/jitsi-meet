@@ -71,14 +71,7 @@ body.welcome-page {
     .footer-text {
         color: #84889C;
         font-size: 14px;
-
-        &.with-margin {
-          margin-top: 20px;
-        }
-
-        &.without-margin {
-          margin-top: 0px;
-        }
+        margin-top: 20px;
 
         a {
             color: #212529;
@@ -91,6 +84,20 @@ body.welcome-page {
         font-weight: $welcomePageButtonFontWeight;
         width: 231px;
         background: #4C54D2;
+        border-radius: 100px;
+        padding: 10px 0;
+        color: #FFFFFF;
+        text-align: center;
+        vertical-align: middle;
+        line-height: $welcomePageButtonLineHeight;
+        cursor: pointer;
+    }
+
+    .welcome-page-button-download {
+        font-size: $welcomePageButtonFontSize;
+        font-weight: $welcomePageButtonFontWeight;
+        width: 231px;
+        background: #EA3A0D;
         border-radius: 100px;
         padding: 10px 0;
         color: #FFFFFF;
