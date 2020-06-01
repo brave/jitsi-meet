@@ -71,7 +71,14 @@ body.welcome-page {
     .footer-text {
         color: #84889C;
         font-size: 14px;
-        margin-top: 20px;
+
+        &.with-margin {
+          margin-top: 20px;
+        }
+
+        &.without-margin {
+          margin-top: 0px;
+        }
 
         a {
             color: #212529;
@@ -125,17 +132,17 @@ body.welcome-page {
 @media (prefers-color-scheme: dark) {
     .welcome {
         background-color: #17171F;
-    
+
         .header {
             .header-today-logo {
                 background: url('../images/togetherLogo_dark.svg');
             }
-    
+
             .header-text-title {
                 color: #F8F9FA;
             }
         }
-    
+
         .footer-text {
             a {
                 color: #F8F9FA;

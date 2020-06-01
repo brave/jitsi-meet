@@ -12,6 +12,7 @@ import { SettingsButton, SETTINGS_TABS } from '../../settings';
 import { AbstractWelcomePage, _mapStateToProps } from './AbstractWelcomePage';
 import Tabs from './Tabs';
 import { isBraveBrowser } from '../../base/environment';
+import { BRAVE_DOWNLOAD } from '../../unsupported-browser/components/browserLinks';
 
 /**
  * The pattern used to validate room name.
@@ -192,7 +193,7 @@ class WelcomePage extends AbstractWelcomePage {
                         </p>
                     </div>
                     <div id = 'enter_room'>
-                        <div
+                        {isBraveBrowser() ? <div
                             className = 'welcome-page-button'
                             id = 'enter_room_button'
                             onClick = { this._onLaunchCall }>
@@ -201,11 +202,11 @@ class WelcomePage extends AbstractWelcomePage {
                                     ? t('welcomepage.goSmall')
                                     : t('welcomepage.go')
                             }
-                        </div>
+                        </div> : null}
                     </div>
-                    <div className = 'footer-text'>
+                    <div className = { `footer-text${isBraveBrowser() ? ' with-margin' : ' without-margin'}` }>
                         { t('welcomepage.footerText') }
-                        <a href = { 'https://brave.com/download/' }>Brave Browser</a>
+                        <a href = { BRAVE_DOWNLOAD }>Brave Browser</a>
                     </div>
                 </div>
                 { showAdditionalContent
